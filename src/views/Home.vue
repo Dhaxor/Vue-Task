@@ -2,6 +2,7 @@
   <div class="home">
     <Header />
     <Section />
+    <Categories />
   </div>
 </template>
 
@@ -9,12 +10,14 @@
 // @ is an alias to /src
 import Header from '@/components/includes/Header.vue';
 import Section from '@/components/includes/Section.vue';
+import Categories from '@/components/Categories.vue';
 
 export default {
   name: 'Home',
   components: {
     Header,
-    Section
+    Section,
+    Categories
   }
 }
 </script>
