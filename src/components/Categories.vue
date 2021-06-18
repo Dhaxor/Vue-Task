@@ -37,12 +37,14 @@ export default {
     padding-left: 15%;
     padding-right: 15%;
     margin: auto;
+    font-family: 'Montserrat', sans-serif;
 
     & .btn__list__adult{
         background-color: #ff5b5b;
         height: 50px;
         color: #fff;
         border: 1px solid #ff5b5b;
+        font-family: 'Montserrat', sans-serif;
     }
 
      & .btn__list__dad{
@@ -50,6 +52,7 @@ export default {
         height: 50px;
         color: #fff;
         border: 1px solid #ff915b;
+        font-family: 'Montserrat', sans-serif;
     }
 
     & .btn__list__christmas{
@@ -57,6 +60,7 @@ export default {
         height: 50px;
         color: #fff;
         border: 1px solid #ffbe5b;
+        font-family: 'Montserrat', sans-serif;
     }
 
     & .btn__list__job{
@@ -64,6 +68,7 @@ export default {
         height: 50px;
         color: #fff;
         border: 1px solid #ffdf5b;
+        font-family: 'Montserrat', sans-serif;
     }
 
     & .btn__list__birthday{
@@ -71,6 +76,7 @@ export default {
         height: 50px;
         color: #fff;
         border: 1px solid #8fe360;
+        font-family: 'Montserrat', sans-serif;
     }
 
     & .btn__list__social{
@@ -78,18 +84,21 @@ export default {
         height: 50px;
         color: #fff;
         border: 1px solid #57e690;
+        font-family: 'Montserrat', sans-serif;
     }
     & .btn__list__pun{
         background-color: #57dbe6;
         height: 50px;
         color: #fff;
         border: 1px solid #57dbe6;
+        font-family: 'Montserrat', sans-serif;
     }
     & .btn__list__view{
         background-color: #fff;
         height: 50px;
         color: #d1bb91;
         border: 1px solid #d1bb91;
+        font-family: 'Montserrat', sans-serif;
     }
 }
 

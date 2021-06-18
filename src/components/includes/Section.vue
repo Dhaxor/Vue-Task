@@ -34,12 +34,14 @@ export default {};
 .text__primary {
   color: #cfb995;
   font-size: 5vw;
+  font-family: 'Montserrat', sans-serif;
 }
 .text__secondary {
   text-align: center;
   font-weight: bold;
   font-size: 1.9vw;
   margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
 }
 .input {
   display: flex;

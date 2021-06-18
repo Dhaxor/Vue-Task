@@ -3,6 +3,7 @@
     <Header />
     <Section />
     <Categories />
+    <JokeCard />
   </div>
 </template>
 
@@ -11,13 +12,15 @@
 import Header from '@/components/includes/Header.vue';
 import Section from '@/components/includes/Section.vue';
 import Categories from '@/components/Categories.vue';
+import JokeCard from '@/components/JokeCard.vue';
 
 export default {
   name: 'Home',
   components: {
     Header,
     Section,
-    Categories
+    Categories,
+    JokeCard
   }
 }
 </script>

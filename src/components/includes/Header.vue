@@ -43,6 +43,7 @@ export default {
      list-style: none;
      width: 30%;
      justify-content: space-around;
+     font-family: 'Montserrat', sans-serif;
      
      
  }
