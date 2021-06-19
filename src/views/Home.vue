@@ -4,6 +4,7 @@
     <Section />
     <Categories />
     <JokeCard />
+    <Footer />
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import Header from '@/components/includes/Header.vue';
 import Section from '@/components/includes/Section.vue';
 import Categories from '@/components/Categories.vue';
 import JokeCard from '@/components/JokeCard.vue';
+import Footer from '@/components/includes/Footer.vue';
 
 export default {
   name: 'Home',
@@ -20,7 +22,8 @@ export default {
     Header,
     Section,
     Categories,
-    JokeCard
+    JokeCard,
+    Footer
   }
 }
 </script>

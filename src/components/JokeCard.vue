@@ -87,7 +87,7 @@
 
     <div class="btn">
       
-      <button class="btn__list__view">View More <img src="../assets/arrow-down.png" alt="arrow_down" class="arr-down"/> </button>
+      <div class="btn__list__view"> View More <img src="../assets/arrow-down.png" alt="arrow_down" class="arr-down"/> </div>
     </div>
   </div>
 </template>
@@ -145,15 +145,16 @@ export default {};
 }
 .btn {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+
 //   position: relative;
   height: 30vh;
 
   & img{
        margin-right: 0;
-       display: block;
+       position: abolute;
        right: 0;
    
   }
@@ -167,6 +168,12 @@ export default {};
         color: #d1bb91;
         border: 1px solid #d1bb91;
         font-family: 'Montserrat', sans-serif;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: space-around;
+        align-items: center;
+        padding-left: 20px;
+        // text-align: center;
         // position: relative;
         
     }

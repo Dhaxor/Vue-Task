@@ -1,13 +1,9 @@
 <template>
    <div style="background-color: #f9f9f9;">
+       <!-- <div>{{data}}</div> -->
+
     <div class="categories">
-        <button class="btn__list__adult">ADULT JOKES</button>
-        <button class="btn__list__dad">DAD JOKES</button>
-        <button class="btn__list__christmas">CHRISTMAS JOKES</button>
-        <button class="btn__list__job">JOB JOKES</button>
-        <button class="btn__list__birthday">BIRTHDAY JOKES</button>
-        <button class="btn__list__social">SOCIAL JOKES</button>
-        <button class="btn__list__pun">PUN JOKES</button>
+        <button class="btn__list__adult" v-for="(color,index) in colors" :key="index" :style="{ 'background-color': color,'border': `1px solid ${color}`}" >{{getCategories[index]}}</button>
         <button class="btn__list__view">VIEW ALL</button>
     </div>
     <div class="line"> </div>
@@ -18,6 +14,23 @@
 
 <script>
 export default {
+    name:'Categories',
+    data () {
+        return {
+            colors: ['#ff5b5b','#ff915b','#ffbe5b','#ffdf5b',
+                     '#8fe360','#57e690']
+        }
+    },
+
+    computed: {
+        getCategories(){
+          return this.$store.state.data;
+        }
+    },
+    mounted() {
+      return this.$store.dispatch("getCategories");
+    }
+
     
 }
 </script>
