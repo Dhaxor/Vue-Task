@@ -62,5 +62,13 @@ export default {
      }
      
  }
+ @media screen and (max-width: 1000px) {
+   .nav{
+    //    background-color: red;
+   }
+   .list__collection{
+       flex-direction: column;
+   }
+}
 
 </style>

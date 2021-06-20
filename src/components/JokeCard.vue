@@ -1,83 +1,14 @@
 <template>
   <div class="col">
     <div class="card__collection">
-      <div class="card">
+      <!-- <div>{{getJokes}}</div> -->
+      <div class="card" v-for="(data,index) in getJokes" :key="index">
         <div class="card__title">
-          <img src="../assets/green-light-copy.png" alt /> LAWYER JOKE
+          <img src="../assets/green-light-copy.png" alt /> {{data.categories}}
         </div>
         <div
           class="card__body"
-        >A lawyer dies and goes to Heaven. "There must be some mistake," the lawyer argues. "I'm too young to die. I'm only 55." "Fifty-five?" says Saint Peter. "No, according to out calculations, you're 82." "How'd you get that?" the lawyer asks. Answers St. Peter, "We added up your time sheets."</div>
-        <div class="card__footer">
-          SEE STATS
-          <img src="../assets/arrow.png" alt />
-        </div>
-      </div>
-      <div class="card">
-        <div class="card__title">
-          <img src="../assets/green-light-copy.png" alt /> DOCTOR JOKE
-        </div>
-        <div class="card__body">
-          I’d never had surgery, and I was nervous. “This is a very simple, noninvasive procedure,” the anesthesiologist reassured me. I felt better, until … “Heck,” he continued, “you have a better chance of dying from the
-          anesthesia than the surgery itself.”
-        </div>
-        <div class="card__footer">
-          SEE STATS
-          <img src="../assets/arrow.png" alt />
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card__title">
-          <img src="../assets/green-light-copy.png" alt /> BUSINESS JOKE
-        </div>
-        <div class="card__body">
-          I went to my boss at work and said, "I need a raise. Three other companies are after me."
-          He said, "Really? Which other companies are after you?"
-          I said, "The electric company, the gas company and the phone company.
-        </div>
-        <div class="card__footer">
-          SEE STATS
-          <img src="../assets/arrow.png" alt />
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card__title">
-          <img src="../assets/green-light-copy.png" alt /> POLICE JOKE
-        </div>
-        <div class="card__body">
-          An officer conducting speed enforcement stops a young man for traveling in excess of 40 mph over the speed limit. The officer approaches the driver and says, "Well, 40 over...I been waiting for you to come along all day."
-          Without pause, the young man replies, "I got here as fast as I could!"
-        </div>
-        <div class="card__footer">
-          SEE STATS
-          <img src="../assets/arrow.png" alt />
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card__title">
-          <img src="../assets/green-light-copy.png" alt /> DOCTOR JOKE
-        </div>
-        <div class="card__body">
-          An officer observes a woman standing in the middle of the street. He approaches her and asks, "Are you okay?"
-          The woman replies, "Yes, but how do I get to the hospital?"
-          The officer replies, "Just keep standing there."
-        </div>
-        <div class="card__footer">
-          SEE STATS
-          <img src="../assets/arrow.png" alt />
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card__title">
-          <img src="../assets/green-light-copy.png" alt /> BOSS JOKE
-        </div>
-        <div
-          class="card__body"
-        >My boss asked me to put a joke on the first slide of the presentation…apparently a picture of my pay slip wasn’t what he was looking for.</div>
+        >{{data.value}}</div>
         <div class="card__footer">
           SEE STATS
           <img src="../assets/arrow.png" alt />
@@ -93,7 +24,23 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data(){
+    return{
+
+    }
+  },
+     computed: {
+        getJokes(){
+          return this.$store.state.jokes.slice(0,6);
+        },
+     },
+
+    mounted() {
+      return this.$store.dispatch("getCategories");
+    },
+    
+};
 </script>
 
 

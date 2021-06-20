@@ -3,11 +3,11 @@
        <!-- <div>{{data}}</div> -->
 
     <div class="categories">
-        <button class="btn__list__adult" v-for="(color,index) in colors" :key="index" :style="{ 'background-color': color,'border': `1px solid ${color}`}" >{{getCategories[index]}}</button>
+        <button class="btn__list__adult" v-for="(color,index) in colors" :key="index" :style="{ 'background-color': color,'border': `1px solid ${color}`}"  @click="Currentcategory(index,getCategories[index])" :class="{yourActiveClass: currentIndex === index, yourInactiveClass: currentIndex !== index}"  >{{getCategories[index]}}</button>
         <button class="btn__list__view">VIEW ALL</button>
     </div>
     <div class="line"> </div>
-    <div class="category__tag">SOCIAL JOKES</div>
+    <div class="category__tag">{{currentCategoryName}}</div>
     </div>
 
 </template>
@@ -18,17 +18,32 @@ export default {
     data () {
         return {
             colors: ['#ff5b5b','#ff915b','#ffbe5b','#ffdf5b',
-                     '#8fe360','#57e690']
+                     '#8fe360','#57e690'],
+            currentName:''
         }
     },
 
     computed: {
         getCategories(){
           return this.$store.state.data;
-        }
+        },
+         currentIndex(){
+            return this.$store.state.currentIndex
+        },
+        currentCategoryName(){
+            return this.$store.state.currentCategoryName
+        },
     },
     mounted() {
-      return this.$store.dispatch("getCategories");
+      return this.$store.dispatch("getJoke");
+    },
+    methods:{
+        Currentcategory(index,em) {
+            // this.currentName = e.target.name
+            console.log(em)
+            return this.$store.dispatch("get__current__category",index)
+            
+        }
     }
 
     
@@ -113,6 +128,10 @@ export default {
         border: 1px solid #d1bb91;
         font-family: 'Montserrat', sans-serif;
     }
+}
+
+.yourActiveClass{
+    border: 3px solid #000 !important;
 }
 
 .line{
